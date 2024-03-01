@@ -1,5 +1,5 @@
 # Course Center
-Opis
+### Opis
 Course Center to aplikacja internetowa stworzona w ramach konkursu Hack Heroes w 2021 roku. Platforma umożliwia nauczycielom tworzenie kursów, dodając do nich filmy, zdjęcia i tekst, co pozwala na dynamiczne i interaktywne doświadczenia edukacyjne. Zarówno nauczyciele, jak i uczniowie znajdą w Course Center idealne narzędzie do efektywnej nauki i nauczania.
 
 **Funkcje:**
