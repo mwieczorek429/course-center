@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load course %} 
+
+{% block title %} 
+    Moduł {{ module.title }}
+{% endblock %} 
+
+{% block content %} 
+{% with course=module.course %}
+<div id="main-title"> 
+    <h1>Kurs: {{ course.title }}</h1>
+</div>
+<div id="main-nav">
+    <h1>Moduły</h1>
+    <ul>
+        {% for m in course.modules.all %}
+        <li data-id="{{ m.id }}" {% if m == module %} class="selected" {% endif %}>
+            <a href="{% url "module_content_list" m.id %}">
+                    Moduł {{ forloop.counter }}
+                <br>
+                <span>{{ m.title }}</span>
+            </a>
+        </li>
+        {% empty %} 
+        <li>Brak modułów.</li>
+        {% endfor %}
+        <li>
+            <span><a href="{% url "course_module_update" course.id %}">Edytuj moduły</a></span>
+        </li>
+    </ul>
+</div>
+<div id="module-block">
+    <h2>Moduł {{ module.order|add:1 }}: {{ module.title }}</h2>
+    <br>
+    <h3>Treść modułu</h3>
+    <div>
+    <div id="module-option">
+        {% for content in module.contents.all %} 
+        <div data-id="{{ content.id }}" id="module-item">
+            {% with item=content.item %}
+            <h3>{{ item }} ({{ item|model_name}})</h3>
+            <a href="{% url "module_content_update" module.id item|model_name item.id %}">Edytuj</a>
+            <br>
+            <form action="{% url "module_content_delete" content.id %}" method="post">
+                <input type="submit" value="Usuń" class="btn btn-danger">
+                {% csrf_token %}
+            </form> 
+            {% endwith %} 
+        </div>
+        {% empty %}
+        <p>Ten moduł nie zawiera jeszcze treści.</p>
+        {% endfor %}  
+    </div>
+    </div>
+    <hr>
+    <h3>Dodaj nową treść:</h3>
+    <div id="module-list">
+        <ul>
+            <li><a href="{% url "module_content_create" module.id "text" %}" style="margin-left: 0;" class="btn btn-info">Tekst</a></li>
+            <li><a href="{% url "module_content_create" module.id "image" %}" class="btn btn-info">Obraz</a></li>
+            <li><a href="{% url "module_content_create" module.id "video" %}" class="btn btn-info">Wideo</a></li>
+            <li><a href="{% url "module_content_create" module.id "file" %}" class="btn btn-info">Plik</a></li>
+        </ul>
+    </div>
+</div>
+{% endwith %} 
+{% endblock %}
+

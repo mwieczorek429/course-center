@@ -1,0 +1,38 @@
+{% load static %} 
+{% load course %} 
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}Course Center{% endblock %}</title>
+        <link href="{% static "css/style.css" %}" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+            <a href="/" class="navbar-brand">COURSE CENTER</a>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ml-auto">
+                    {% if request.user.is_authenticated %}
+                      {% if request.user|has_group:"Instruktor" %}
+                        <li class="nav-item"><a class="nav-item nav-link" href="{% url "manage_course_list" %}">Moje kursy</a></li>
+                      {% endif %}
+                    <li class="nav-item"><a class="nav-item nav-link" href="{% url "students_course_list" %}">Zapisane kursy</a></li>
+                    <li class="nav-item"><a class="nav-item nav-link" href="{% url "logout" %}">Wyloguj</a></li>
+                    {% else %}
+                    <li class="nav-item"><a class="nav-item nav-link" href="{% url "student_registration" %}">Stwórz konto</a></li>
+                    <li class="nav-item"><a class="nav-item nav-link" href="{% url "login" %}">Zaloguj</a></li>
+                    {% endif %}
+                </ul> 
+              </div>
+            </div>
+          </nav>
+
+        <div id="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

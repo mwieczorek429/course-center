@@ -1,0 +1,252 @@
+@import url(//fonts.googleapis.com/css?family=Roboto:500,300,400);
+
+
+body{
+    margin: 0;
+    font-family: "Roboto";
+}
+li, a{
+    text-decoration: none;
+    list-style: none;
+}
+#main-title{
+    display: block;
+    width: 100%;
+    background-color: #0F6CA6;
+    
+    
+}
+#main-title h1{
+    color: white;
+    padding: 20px;
+    margin: 0;
+}
+#main-nav{
+    display: block;
+    float: left;
+    background-color: #011C26;
+    color: white;
+    width: 18%;
+
+}
+#main-nav ul{
+    padding: 0;
+}
+#main-nav h1{
+    margin: 10px 0 20px 15px;
+    font-size: 32px;
+}
+#main-nav li {
+    padding: 10px;
+}   
+#main-nav a:hover {
+    text-decoration: none;
+    color: gray;
+}
+#main-nav li:hover{
+    background-color: #02151f;
+} 
+#main-nav li a{
+    color: white;
+    padding: 10px;
+    
+}   
+#main-nav li a span{
+    color: #DEDEDE;
+    padding: 10px;
+}   
+
+#main-courses{
+    display: block;
+    float: left;
+    margin-left: 30px;
+    margin-top: 40px;
+}
+#main-courses h3 a{
+    color: #012840;
+}
+#main-courses h3 a:hover{
+    color: #176475;
+    text-decoration: none;
+}
+#main-courses a{
+    color: #22CCF2;
+}
+#main-courses a:hover{
+    color: #22CCF2;
+    text-decoration: none;
+}
+.selected{
+    background-color: #02151f;
+}
+
+#course-detail h2{
+    margin: 20px 0 20px 20px;
+}
+
+#course-detail p{
+    margin-left: 20px;
+}
+
+#course-detail input{
+    margin-top: 30px;
+    margin-left: 20px;
+    width: 300px;
+}
+
+#module-page{
+    display: grid;
+    
+}
+#module-page h2{
+    margin: 40px 0;
+   
+}
+
+#module-page #item-Text{
+    grid-row-start: 1;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+#module-page #item-Video{
+    grid-row-start: 2;
+    margin-left: 50px;
+}
+#module-page #item-Image{
+    grid-row-start: 3;
+    margin-left: 50px;
+}
+#module-page #item-Image img{
+
+    max-height: 500px;
+}
+
+#module-page #item-File{
+    grid-row-start: 4;
+    margin-left: 50px;
+    margin-bottom: 60px;
+}
+
+
+#courses-list {
+    margin-top: 10px;
+}
+#courses-list #courses-course{
+    display: block;
+    padding: 0 30px 0px 30px;
+    
+}
+
+.form-group{
+    display: block;
+    width: 340px;
+    color: #575757;
+    margin: 10% auto 0 auto;
+    padding: 30px;
+    border-radius: 5%;
+    box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+}
+
+.form-group  form p{
+    width: 100%;
+}
+
+
+.form-group  form input[type=submit]{
+    width: 100%;
+    margin-top: 30px;
+}
+
+.form-group form input[type=text], input[type=password]{
+    float: right;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.form-group-register{
+    display: block;
+    width: 400px;
+    color: #575757;
+    margin: 5% auto 0 auto;
+    padding: 30px;
+    border-radius: 5%;
+    box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+}
+.form-group-register span{
+    color: white;
+}
+
+.form-group-register ul {
+    padding: 0;
+}
+
+.form-group-register form input{
+    float: none;
+    width: 100%;
+}
+
+#my-courses{
+    margin: 20px;
+}
+
+#course-create{
+    display: block;
+    margin: 20px;
+}
+
+#course-create  h2{
+    margin-bottom: 20px;
+}
+
+#course-create textarea{
+    height: 5em;
+}
+
+#courses-list{
+    display: block;
+    margin: 20px;
+}
+
+#courses-list form {
+    margin-left: 15px;
+}
+#course-item{
+    display: grid;
+    width: 50%;
+}
+
+#course-item input[type=checkbox]{
+    margin-bottom: 50px;
+
+}
+
+#module-block{
+    display: block;
+    float: left;
+    margin-left: 40px;
+    margin-top: 40px;
+}
+
+#module-option {
+    display: inline-block;
+}
+
+#module-item{
+    display: block;
+    border: solid 1px #012840;
+    width: 460px;
+    margin: 20px 0;
+    padding: 20px;
+}
+#module-list ul{
+    padding: 0;
+}
+#module-list li{
+    margin-top: 10px;
+    display: inline-block;
+}
+#module-list a{
+    padding: 10px 20px;
+    margin: 0 20px;
+    
+}
